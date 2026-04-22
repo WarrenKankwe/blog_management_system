@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h1>Welcome, {{ current_user.username }}!</h1>
+
+<p>
+  <a href="{{ url_for('posts.new_post') }}">Create New Post</a> |
+  <a href="{{ url_for('main.home') }}">View Published Posts</a>
+</p>
+
+<h2>Your Posts</h2>
+<ul>
+{% for p in current_user.posts %}
+  <li>
+    <a href="{{ url_for('posts.post_detail', post_id=p.id) }}">{{ p.title }}</a>
+    ({{ p.status }})
+    {% if p.status == "draft" %}
+      <a href="{{ url_for('posts.update_post', post_id=p.id) }}">edit</a>
+      <form action="{{ url_for('posts.delete_post', post_id=p.id) }}" method="POST" style="display:inline;">
+        <button type="submit">delete</button>
+      </form>
+    {% endif %}
+  </li>
+{% else %}
+  <li>No posts yet.</li>
+{% endfor %}
+</ul>
+{% endblock %}

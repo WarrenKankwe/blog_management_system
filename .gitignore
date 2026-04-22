@@ -1,0 +1,18 @@
+# venv & Python cache
+.venv/
+__pycache__/
+*.py[cod]
+
+# env / secrets
+.env
+.env.*
+
+# databases (keep or ignore—choose one)
+*.sqlite3
+instance/
+
+# Editor artifacts
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

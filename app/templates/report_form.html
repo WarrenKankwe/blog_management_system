@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Report Post{% endblock %}
+{% block content %}
+<h1>Report "{{ post.title }}"</h1>
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <p>{{ form.reason.label }} {{ form.reason(rows=5, cols=60) }}</p>
+  {{ form.submit(class="btn") }}
+</form>
+{% endblock %}

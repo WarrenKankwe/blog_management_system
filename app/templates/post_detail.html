@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p><em>by {{ post.author.username }} ({{ post.status }})</em></p>
+<p>{{ post.content }}</p>
+
+{% if current_user.is_authenticated and post.status == "published" and not current_user.is_admin() %}
+  <p><a href="{{ url_for('reports.new_report', post_id=post.id) }}">Report this post</a></p>
+{% endif %}
+
+{% endblock %}

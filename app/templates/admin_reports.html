@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Reports{% endblock %}
+{% block content %}
+<h1>Open Reports</h1>
+<table>
+<tr><th>Post</th><th>Reporter</th><th>Reason</th><th>Action</th></tr>
+{% for r in reports %}
+<tr>
+  <td><a href="{{ url_for('posts.post_detail', post_id=r.post.id) }}">{{ r.post.title }}</a></td>
+  <td>{{ r.reporter_id }}</td>
+  <td>{{ r.reason }}</td>
+  <td>
+    <a href="{{ url_for('admin.review_report', report_id=r.id, action='keep') }}">keep&nbsp;post</a> |
+    <a href="{{ url_for('admin.review_report', report_id=r.id, action='remove') }}">remove&nbsp;post</a>
+  </td>
+</tr>
+{% else %}
+  <tr><td colspan="4">No open reports.</td></tr>
+{% endfor %}
+</table>
+{% endblock %}

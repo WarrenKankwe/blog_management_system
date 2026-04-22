@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}{{ legend if legend else 'New Post' }}{% endblock %}
+{% block content %}
+<h1>{{ legend if legend else 'Create Post' }}</h1>
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <p>{{ form.title.label }} {{ form.title(size=60) }}</p>
+  <p>{{ form.content.label }} {{ form.content(rows=10, cols=60) }}</p>
+  <p>{{ form.status.label }} {{ form.status() }}</p>
+  {{ form.submit(class="btn") }}
+</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Moderation{% endblock %}
+{% block content %}
+<h1>Pending Posts</h1>
+<table>
+<tr><th>Title</th><th>Author</th><th>Action</th></tr>
+{% for p in posts %}
+<tr>
+  <td><a href="{{ url_for('posts.post_detail', post_id=p.id) }}">{{ p.title }}</a></td>
+  <td>{{ p.author.username }}</td>
+  <td>
+    <a href="{{ url_for('admin.moderate_post', post_id=p.id, action='publish') }}">publish</a> |
+    <a href="{{ url_for('admin.moderate_post', post_id=p.id, action='remove') }}">remove</a>
+  </td>
+</tr>
+{% else %}
+  <tr><td colspan="3">No pending posts.</td></tr>
+{% endfor %}
+</table>
+{% endblock %}
