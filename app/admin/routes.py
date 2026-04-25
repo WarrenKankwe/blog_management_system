@@ -15,7 +15,14 @@ def admin_required():
 def moderation_panel():
     admin_required()
     pending_posts = Post.query.filter_by(status="pending").all()
-    return render_template("admin_moderation.html", posts=pending_posts)
+    pending_count = Post.query.filter_by(status="pending").count()
+    report_count  = Report.query.filter_by(status="open").count()
+    return render_template(
+        "admin_moderation.html",
+        posts=pending_posts,
+        pending_count=pending_count,
+        report_count=report_count,
+    )
 
 
 @admin_bp.route("/moderation/<int:post_id>/<string:action>")
@@ -39,7 +46,14 @@ def moderate_post(post_id, action):
 def reports_panel():
     admin_required()
     reports = Report.query.filter_by(status="open").all()
-    return render_template("admin_reports.html", reports=reports)
+    pending_count = Post.query.filter_by(status="pending").count()
+    report_count  = len(reports)
+    return render_template(
+        "admin_reports.html",
+        reports=reports,
+        pending_count=pending_count,
+        report_count=report_count,
+    )
 
 
 @admin_bp.route("/reports/<int:report_id>/<string:action>")

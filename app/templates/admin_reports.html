@@ -2,6 +2,12 @@
 {% block title %}Reports{% endblock %}
 {% block content %}
 <h1>Open Reports</h1>
+<h1>
+  Open Reports ({{ report_count }}) &nbsp;|&nbsp;
+  <a href="{{ url_for('admin.moderation_panel') }}">
+      Pending Posts ({{ pending_count }})
+  </a>
+</h1>
 <table>
 <tr><th>Post</th><th>Reporter</th><th>Reason</th><th>Action</th></tr>
 {% for r in reports %}

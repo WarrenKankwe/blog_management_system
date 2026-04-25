@@ -9,6 +9,7 @@
 <nav>
   <a href="{{ url_for('main.home') }}">Home</a>
   {% if current_user.is_authenticated %}
+    <a href="{{ url_for('posts.new_post') }}">New Post</a>
     <a href="{{ url_for('main.dashboard') }}">Dashboard</a>
     {% if current_user.is_admin() %}
       <a href="{{ url_for('admin.moderation_panel') }}">Admin</a>
