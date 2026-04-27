@@ -7,7 +7,7 @@
 # Blog Management System (Secure-Software-Engineering Project)
 
 ## 📽 Demo Video
-<https://youtu.be/abcdef12345>
+[<https://youtu.be/abcdef12345>](https://drive.google.com/file/d/1pnMgMYc-M6J00gUjdSwKdqd8jtcO02HT/view?usp=drive_link)
 
 ## Overview
 A small Flask web-app that mimics a blogging platform **with content moderation and role-based access control**.  
