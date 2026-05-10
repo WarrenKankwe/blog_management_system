@@ -1,5 +1,5 @@
 {
-  "version": "2.6.1",
+  "version": "2.6.2-RC1",
   "summary": {
     "title": "DU Hockey Ticket Management System",
     "owner": "SSE Group",
@@ -29,11 +29,11 @@
         "cells": [
           {
             "position": {
-              "x": 40,
-              "y": 459
+              "x": 29.999999999999943,
+              "y": 480
             },
             "size": {
-              "width": 490,
+              "width": 570,
               "height": 110
             },
             "attrs": {
@@ -43,8 +43,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "dd0e2d78-f604-4f15-a52a-c8f9f172e1c4",
             "zIndex": -1,
+            "id": "dd0e2d78-f604-4f15-a52a-c8f9f172e1c4",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "User / Admin Authorization Boundary",
@@ -79,6 +79,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -162,7 +163,6 @@
               ]
             },
             "id": "e336f853-74aa-4ec1-98f8-7c4d955f2469",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "Registered User",
@@ -177,8 +177,8 @@
           },
           {
             "position": {
-              "x": 50,
-              "y": 494
+              "x": 40,
+              "y": 524
             },
             "size": {
               "width": 112.5,
@@ -196,6 +196,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -279,7 +280,6 @@
               ]
             },
             "id": "6ef0c03a-42a7-4fda-b832-525bdea4e4f5",
-            "zIndex": 2,
             "data": {
               "type": "tm.Actor",
               "name": "Admin User",
@@ -290,7 +290,10 @@
               "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": []
-            }
+            },
+            "children": [
+              "a87e0ff3-d8aa-480f-91f9-00eabe39ee5f"
+            ]
           },
           {
             "position": {
@@ -313,6 +316,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -396,7 +400,6 @@
               ]
             },
             "id": "e41076fe-0199-4e61-a8ff-b79df0acd60f",
-            "zIndex": 3,
             "data": {
               "type": "tm.Actor",
               "name": "Anonymous Visitor",
@@ -411,8 +414,8 @@
           },
           {
             "position": {
-              "x": 380,
-              "y": 180
+              "x": 500,
+              "y": 210
             },
             "size": {
               "width": 60,
@@ -430,6 +433,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -513,7 +517,6 @@
               ]
             },
             "id": "3a69a606-ab6f-493d-b6b2-0b703ecd4f78",
-            "zIndex": 4,
             "data": {
               "type": "tm.Process",
               "name": "Session / Token Validation",
@@ -531,8 +534,8 @@
           },
           {
             "position": {
-              "x": 380,
-              "y": 60
+              "x": 500,
+              "y": 90
             },
             "size": {
               "width": 60,
@@ -550,6 +553,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 5,
             "ports": {
               "groups": {
                 "top": {
@@ -633,7 +637,6 @@
               ]
             },
             "id": "96c9d191-346f-4632-80da-a0f004d2b446",
-            "zIndex": 5,
             "data": {
               "type": "tm.Process",
               "name": "Login / Register",
@@ -651,8 +654,8 @@
           },
           {
             "position": {
-              "x": 380,
-              "y": 279
+              "x": 500,
+              "y": 309
             },
             "size": {
               "width": 60,
@@ -670,6 +673,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 6,
             "ports": {
               "groups": {
                 "top": {
@@ -753,7 +757,6 @@
               ]
             },
             "id": "062f2164-9be8-412b-9012-a9290f6344cc",
-            "zIndex": 6,
             "data": {
               "type": "tm.Process",
               "name": "Ticket Purchase",
@@ -771,8 +774,8 @@
           },
           {
             "position": {
-              "x": 380,
-              "y": 390
+              "x": 500,
+              "y": 420
             },
             "size": {
               "width": 60,
@@ -790,6 +793,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 7,
             "ports": {
               "groups": {
                 "top": {
@@ -873,7 +877,6 @@
               ]
             },
             "id": "1ac8f0be-98bd-4f03-8600-24a3b538b86f",
-            "zIndex": 7,
             "data": {
               "type": "tm.Process",
               "name": "Refund Request",
@@ -891,8 +894,8 @@
           },
           {
             "position": {
-              "x": 380,
-              "y": 494
+              "x": 500,
+              "y": 524
             },
             "size": {
               "width": 60,
@@ -910,6 +913,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 8,
             "ports": {
               "groups": {
                 "top": {
@@ -993,7 +997,6 @@
               ]
             },
             "id": "a7ef0768-01af-458c-bdde-ad8dd26a9278",
-            "zIndex": 8,
             "data": {
               "type": "tm.Process",
               "name": "Admin Management",
@@ -1029,181 +1032,14 @@
             ],
             "id": "045c4ed9-44b2-4933-9f06-5afa0c7d577b",
             "source": {
-              "x": 600,
-              "y": 60
+              "x": 840,
+              "y": 80
             },
             "target": {
-              "x": 600,
-              "y": 600
+              "x": 840,
+              "y": 620
             },
             "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "",
-              "description": "Create user, verify password hash, read account status/role",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              ""
-            ],
-            "id": "904e536a-3b09-4ea2-9bbb-f502c8c56691",
-            "source": {
-              "x": 440,
-              "y": 100
-            },
-            "target": {
-              "cell": "f5588054-15a7-4996-a981-c580150d4964",
-              "port": "afe99371-e33d-4294-8a93-43e9444badf0"
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "",
-              "description": "Registration data, login credentials, CSRF token",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              ""
-            ],
-            "id": "9a0ad783-fc4d-4d72-8700-6378a0259f8a",
-            "source": {
-              "x": 153,
-              "y": 120
-            },
-            "target": {
-              "cell": "96c9d191-346f-4632-80da-a0f004d2b446",
-              "port": "ef91f79f-ba80-469a-abbf-0d70d8a832b7"
-            },
-            "vertices": [
-              {
-                "x": 190,
-                "y": 120
-              },
-              {
-                "x": 280,
-                "y": 90
-              }
-            ]
           },
           {
             "shape": "flow",
@@ -1243,8 +1079,8 @@
             ],
             "id": "f9a3b280-4252-4eea-9a9a-c57be597c4c2",
             "source": {
-              "x": 410,
-              "y": 120
+              "x": 530,
+              "y": 150
             },
             "target": {
               "cell": "3a69a606-ab6f-493d-b6b2-0b703ecd4f78",
@@ -1271,18 +1107,18 @@
             ],
             "id": "c7991e20-bb2e-4876-a3e3-394e6e0d725e",
             "source": {
-              "x": 250,
+              "x": 290,
               "y": 70
             },
             "target": {
-              "x": 250,
+              "x": 290,
               "y": 600
             }
           },
           {
             "position": {
-              "x": 780,
-              "y": 130
+              "x": 980,
+              "y": 150
             },
             "size": {
               "width": 120,
@@ -1303,6 +1139,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 13,
             "ports": {
               "groups": {
                 "top": {
@@ -1386,7 +1223,6 @@
               ]
             },
             "id": "f5588054-15a7-4996-a981-c580150d4964",
-            "zIndex": 13,
             "data": {
               "type": "tm.Store",
               "name": "SQLite Database",
@@ -1405,8 +1241,8 @@
           },
           {
             "position": {
-              "x": 810,
-              "y": 360
+              "x": 980,
+              "y": 370
             },
             "size": {
               "width": 120,
@@ -1427,6 +1263,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 14,
             "ports": {
               "groups": {
                 "top": {
@@ -1510,7 +1347,6 @@
               ]
             },
             "id": "b5b97888-f560-4210-90e5-9a7b6b2f71f2",
-            "zIndex": 14,
             "data": {
               "type": "tm.Store",
               "name": "Application Secrets / Environment Variables",
@@ -1525,52 +1361,6 @@
               "storesCredentials": false,
               "storesInventory": false,
               "threats": []
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 15,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "",
-              "description": "Session cookie / authentication token",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              ""
-            ],
-            "id": "855d6e42-fcf6-43ed-ab1d-9f94406d40c1",
-            "source": {
-              "x": 380,
-              "y": 200
-            },
-            "target": {
-              "cell": "e41076fe-0199-4e61-a8ff-b79df0acd60f",
-              "port": "ef73501a-2bfb-4569-b807-9b09fb012601"
             }
           }
         ]
