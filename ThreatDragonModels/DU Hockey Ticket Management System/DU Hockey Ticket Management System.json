@@ -1,13 +1,23 @@
 {
-  "version": "2.6.2-RC1",
+  "version": "2.6.1",
   "summary": {
     "title": "DU Hockey Ticket Management System",
-    "owner": "",
+    "owner": "SSE Group",
     "description": "Threat model for the DU Hockey Ticket Management System, a Flask-based web application with registration, login, ticket purchasing, refund requests, admin management, SQLite database storage, and session/token-based authentication.",
     "id": 0
   },
   "detail": {
-    "contributors": [],
+    "contributors": [
+      {
+        "name": "Sy Pretto"
+      },
+      {
+        "name": "Warren Kankwe"
+      },
+      {
+        "name": "Abhinav Khoti"
+      }
+    ],
     "diagrams": [
       {
         "id": 0,
