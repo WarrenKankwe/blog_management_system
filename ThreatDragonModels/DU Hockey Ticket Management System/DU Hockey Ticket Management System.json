@@ -550,8 +550,8 @@
                 "text": "Login/Register\n+\nSession Valiation"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -648,12 +648,60 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "33315e40-19f9-4d59-8391-0d4ba1edf9b0",
+                  "title": "Session Token Forgery",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "An attacker may forge, tamper with, or reuse a session cookie/token to impersonate another user if the application secret key is weak, exposed, or poorly protected. This could allow unauthorized access to user-only or admin-only features.",
+                  "mitigation": "Use a cryptographically strong SECRET_KEY, protect secrets from source control and logs, enforce HTTPS, set Secure/HttpOnly/SameSite cookie flags, expire sessions appropriately, and validate sessions/tokens server-side on every protected request.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": "Spoofing — 2 of Spades"
+                },
+                {
+                  "id": "a06d5a1b-ba87-4080-b55e-2c125475f7a9",
+                  "title": "Credential Stuffing Due to No Rate Limiting",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "The login endpoint may allow repeated authentication attempts without rate limiting, lockout, CAPTCHA, or delay. An attacker could automate login attempts using breached email/password lists and eventually gain access to valid user accounts.",
+                  "mitigation": "Add rate limiting to login attempts, temporarily lock accounts after repeated failures, add CAPTCHA or step-up verification after suspicious activity, and monitor logs for repeated failed login attempts from the same IP or account.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": "Spoofing — 5 of Spades"
+                },
+                {
+                  "id": "8ec659e6-1da4-4014-a298-e4f4453f91ab",
+                  "title": "Debug Mode Information Disclosure",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "If debug mode is enabled in a non-development environment, unhandled errors may expose stack traces, source code snippets, local variables, file paths, configuration details, or interactive debugging features to users.",
+                  "mitigation": "Disable debug mode outside development. Configure generic custom error pages for users, log detailed errors server-side only, and ensure sensitive configuration values are never displayed in error responses.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": "Information Disclosure — Jack of Hearts"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -670,8 +718,8 @@
                 "text": "Ticket\nPurchase"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -768,12 +816,47 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "f917ecef-bd8f-49a1-bbe7-f43ed07c6a41",
+                  "title": "Payment Method Field Manipulation",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "A user may manipulate the payment method field in the browser using DevTools or a custom HTTP request and submit an arbitrary value that was not offered by the application UI. If the server accepts the value, fraudulent or invalid payment records could be stored.",
+                  "mitigation": "Validate payment method values server-side using a strict allowlist. Reject any value outside the approved set with an error response. Consider database constraints and integration with a real payment processor instead of trusting client-submitted payment fields.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": "Tampering — 3 of Clubs"
+                },
+                {
+                  "id": "86e1a319-31c4-4dd4-9b9b-73711c446e9d",
+                  "title": "Client-Side Quantity Manipulation",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "A user may modify HTML min/max attributes, hidden fields, or request parameters to submit invalid ticket quantities such as zero, negative numbers, or excessive quantities. Relying only on browser-side restrictions would allow order manipulation.",
+                  "mitigation": "Validate ticket quantity server-side on every purchase request. Enforce minimum and maximum quantity rules, check seat availability, reject invalid values, and avoid trusting client-side form restrictions.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": "Tampering — 7 of Clubs"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 2,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -790,8 +873,8 @@
                 "text": "Refund\nRequest"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -888,12 +971,41 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "a0b97dec-1db3-42c0-a0ed-68f6771e94cb",
+                  "title": "Refund Queue Flooding",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "A user or automated script may submit a high volume of refund requests, overwhelming the admin refund queue and making it difficult for administrators to process legitimate refund requests in a timely manner.",
+                  "mitigation": "Rate limit refund requests per user and per IP address. Prevent duplicate refund requests for the same ticket, add cooldown periods, monitor abnormal refund volume, and alert admins when the queue grows unusually fast.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": "Denial of Service — 6 of Clubs"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -910,8 +1022,8 @@
                 "text": "Admin\nManagement"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1008,12 +1120,47 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "c7b2c30b-c3bd-45d3-801a-9955c87887e9",
+                  "title": "No Admin Action Audit Logging",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "Sensitive admin actions such as suspending users, reactivating accounts, elevating users to admin, approving refunds, or denying refunds may not be recorded in an audit log. A malicious or compromised admin could perform actions and later deny responsibility.",
+                  "mitigation": "Implement append-only audit logging for all sensitive admin actions. Each log entry should include actor user ID, target resource, action type, timestamp, IP address, request ID, and outcome. Restrict modification of audit logs.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": "Repudiation — 9 of Diamonds"
+                },
+                {
+                  "id": "30add896-6482-4fae-b22a-9e4ec1f4a5c4",
+                  "title": "Uncontrolled Admin Elevation",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Elevation of privilege",
+                  "description": "A compromised admin account may elevate additional users to admin without extra verification, approval, notification, or audit logging. This allows an attacker who compromises one admin account to expand and preserve privileged access.",
+                  "mitigation": "Require MFA and re-authentication before role elevation. Add approval or notification for new admin creation, log all privilege changes, and apply least privilege by separating admin roles for user management, ticket management, and refund management.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": "Elevation of Privilege — 9 of EoP"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
@@ -1365,181 +1512,6 @@
             "target": {
               "cell": "f5588054-15a7-4996-a981-c580150d4964",
               "port": "afe99371-e33d-4294-8a93-43e9444badf0"
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
             }
           },
           {
@@ -1593,52 +1565,6 @@
                 "y": 350
               }
             ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Confirmation + barcode",
-              "description": "The application returns ticket purchase confirmation, order details, issued ticket information, and barcode/token information to the registered user. Because barcodes may function as ticket validity tokens, this response should avoid unnecessary exposure and should protect against information disclosure.",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Confirmation + barcode"
-            ],
-            "id": "92a8830f-50e9-4da1-8222-e92ab66c8ee4",
-            "source": {
-              "x": 500,
-              "y": 340
-            },
-            "target": {
-              "cell": "e336f853-74aa-4ec1-98f8-7c4d955f2469",
-              "port": "ef73501a-2bfb-4569-b807-9b09fb012601"
-            }
           },
           {
             "shape": "flow",
@@ -2018,6 +1944,72 @@
             "target": {
               "cell": "b5b97888-f560-4210-90e5-9a7b6b2f71f2",
               "port": "afe99371-e33d-4294-8a93-43e9444badf0"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Confirmation + barcode",
+              "description": "The application returns ticket purchase confirmation, order details, issued ticket information, and barcode/token information to the registered user. Because barcodes may function as ticket validity tokens, this response should avoid unnecessary exposure and should protect against information disclosure.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "23978bf8-d1cc-4d99-b41c-d858a089794a",
+                  "title": "Barcode Exposure in Ticket Listing",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Full ticket barcodes may be displayed in the user’s ticket listing or confirmation page. If barcodes function as ticket validity tokens, they could be exposed through screenshots, shoulder surfing, browser history, or shared pages.",
+                  "mitigation": "Mask barcodes by default and reveal the full barcode only when necessary. Require re-authentication for sensitive ticket details, prevent unnecessary barcode exposure, and allow barcode rotation or invalidation if exposed.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": "Information Disclosure — 7 of Hearts"
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Confirmation + barcode"
+            ],
+            "id": "92a8830f-50e9-4da1-8222-e92ab66c8ee4",
+            "source": {
+              "x": 500,
+              "y": 340
+            },
+            "target": {
+              "cell": "e336f853-74aa-4ec1-98f8-7c4d955f2469",
+              "port": "ef73501a-2bfb-4569-b807-9b09fb012601"
             }
           },
           {
@@ -2445,6 +2437,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 11
   }
 }
