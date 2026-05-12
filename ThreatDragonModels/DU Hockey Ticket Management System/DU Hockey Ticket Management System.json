@@ -51,7 +51,11 @@
               "description": "Separates normal authenticated user functionality from privileged administrative functionality. Regular users should not be able to cross this boundary or perform admin-only actions.",
               "isTrustBoundary": true,
               "hasOpenThreats": false,
-              "crossingFlows": [],
+              "crossingFlows": [
+                "296730f4-3093-4e47-9376-a5a98725178d",
+                "bdf981b6-6208-4374-929d-4686af4831b8",
+                "1ad7387c-0d27-41ae-a0e6-2818bf241fdf"
+              ],
               "containedElements": [
                 "6ef0c03a-42a7-4fda-b832-525bdea4e4f5",
                 "a7ef0768-01af-458c-bdde-ad8dd26a9278"
@@ -1085,66 +1089,6 @@
             "target": {
               "cell": "96c9d191-346f-4632-80da-a0f004d2b446",
               "port": "ef91f79f-ba80-469a-abbf-0d70d8a832b7"
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
             }
           },
           {
@@ -1259,137 +1203,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Game browsing",
-              "description": "An authenticated user requests available hockey games, sections, pricing, and seating information. This flow should only expose information appropriate for regular users and should not reveal internal database details, hidden admin information, or sensitive system state.",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Game browsing"
-            ],
-            "id": "9d814e3e-1cf1-418a-a4e0-eceac1b952d3",
-            "source": {
-              "x": 153,
-              "y": 289
-            },
-            "target": {
-              "cell": "3a69a606-ab6f-493d-b6b2-0b703ecd4f78",
-              "port": "ef91f79f-ba80-469a-abbf-0d70d8a832b7"
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Game/seat lookup",
               "description": "The application queries the database for available games, teams, sections, seat availability, and pricing information. These queries support the user-facing game browsing and ticket selection pages.",
               "outOfScope": false,
@@ -1436,8 +1249,8 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Game list",
-              "description": "The application returns game listings, section options, seat availability, and pricing information to the authenticated user. The response should be properly encoded and should not expose unnecessary internal database fields or debugging information.",
+              "name": "Session cookie",
+              "description": "After successful authentication, the application returns an authenticated session cookie or token to the user’s browser. This value allows the user to access protected application features. It must be protected with secure session settings such as HttpOnly, Secure, SameSite, expiration, and server-side validation.",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
@@ -1450,19 +1263,176 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Game list"
+              "Session cookie"
             ],
-            "id": "f1c70058-9924-497a-b3f2-8ad89c7350fb",
+            "id": "f52b29fd-8394-4ba6-b006-5439efbb1e34",
             "source": {
-              "x": 500,
-              "y": 250
+              "x": 510,
+              "y": 140
             },
             "target": {
-              "x": 160,
-              "y": 320
+              "cell": "e336f853-74aa-4ec1-98f8-7c4d955f2469",
+              "port": "73f8bad7-179f-45ad-bcfb-79a467fe5dcc"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Order details",
+              "description": "The registered user submits ticket purchase or reservation details, including game ID, section ID, quantity, student ID if applicable, payment method, and CSRF token. This flow must be validated server-side because users can manipulate form fields, hidden values, dropdowns, and request parameters in the browser.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Order details"
+            ],
+            "id": "0a8a0145-7f9a-4295-881f-488c1885c844",
+            "source": {
+              "x": 153,
+              "y": 270
+            },
+            "target": {
+              "cell": "062f2164-9be8-412b-9012-a9290f6344cc",
+              "port": "87eaa9e2-cbb6-478c-a26f-a8e81f2c0570"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Seat/order write",
+              "description": "The ticket purchase process checks seat availability, validates business rules, creates order records, creates ticket records, stores payment records, and updates seat or ticket status. This flow must prevent invalid quantities, payment method tampering, discount abuse, duplicate purchases, and unauthorized data modification.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Seat/order write"
+            ],
+            "id": "0a8ba575-11d4-4ee2-8f79-495d41573136",
+            "source": {
+              "x": 529,
+              "y": 309
+            },
+            "target": {
+              "cell": "f5588054-15a7-4996-a981-c580150d4964",
+              "port": "afe99371-e33d-4294-8a93-43e9444badf0"
             },
             "tools": {
               "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
                 "boundary",
                 "button-remove",
                 "vertices",
@@ -1592,8 +1562,8 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Session cookie",
-              "description": "After successful authentication, the application returns an authenticated session cookie or token to the user’s browser. This value allows the user to access protected application features. It must be protected with secure session settings such as HttpOnly, Secure, SameSite, expiration, and server-side validation.",
+              "name": "Price/availability",
+              "description": "The database returns pricing, section availability, seat information, order status, and ticket/barcode data to the ticket purchase process. The application uses this data to calculate totals, confirm purchases, and generate issued ticket information.",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
@@ -1606,291 +1576,448 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Session cookie"
+              "Price/availability"
             ],
-            "id": "f52b29fd-8394-4ba6-b006-5439efbb1e34",
+            "id": "2b636d4f-f638-4ceb-b8a9-4cae94b9625a",
             "source": {
-              "x": 510,
-              "y": 140
+              "x": 970,
+              "y": 190
+            },
+            "target": {
+              "cell": "062f2164-9be8-412b-9012-a9290f6344cc",
+              "port": "0471fdf7-6c16-4226-b996-7b2c37a16b7e"
+            },
+            "vertices": [
+              {
+                "x": 610,
+                "y": 350
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Confirmation + barcode",
+              "description": "The application returns ticket purchase confirmation, order details, issued ticket information, and barcode/token information to the registered user. Because barcodes may function as ticket validity tokens, this response should avoid unnecessary exposure and should protect against information disclosure.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Confirmation + barcode"
+            ],
+            "id": "92a8830f-50e9-4da1-8222-e92ab66c8ee4",
+            "source": {
+              "x": 500,
+              "y": 340
             },
             "target": {
               "cell": "e336f853-74aa-4ec1-98f8-7c4d955f2469",
               "port": "ef73501a-2bfb-4569-b807-9b09fb012601"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
             },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Refund request",
+              "description": "The registered user submits a refund request for a ticket. The request may include ticket ID, refund reason, and CSRF token. The application must verify that the ticket belongs to the authenticated user before accepting the request.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Refund request"
+            ],
+            "id": "c9babb29-b128-4ee4-8b77-42f59c4e1978",
+            "source": {
+              "x": 153,
+              "y": 285
+            },
+            "target": {
+              "cell": "1ac8f0be-98bd-4f03-8600-24a3b538b86f",
+              "port": "ef91f79f-ba80-469a-abbf-0d70d8a832b7"
+            },
+            "vertices": [
+              {
+                "x": 350,
+                "y": 400
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Refund write/status",
+              "description": "The refund request process checks ticket ownership, checks whether a refund request already exists, creates a refund request record, and updates refund status when necessary. This flow must prevent IDOR, duplicate refund requests, queue flooding, and unauthorized refund creation.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Refund write/status"
+            ],
+            "id": "f3e34ddc-ef50-449d-a3e6-f7ef1a69a16e",
+            "source": {
+              "x": 540,
+              "y": 420
+            },
+            "target": {
+              "cell": "f5588054-15a7-4996-a981-c580150d4964",
+              "port": "afe99371-e33d-4294-8a93-43e9444badf0"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Ticket refund status",
+              "description": "The database returns ticket ownership information, ticket status, and existing refund request status to the refund request process. The application uses this information to decide whether the current user is allowed to request a refund and whether the request is a duplicate.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Ticket refund status"
+            ],
+            "id": "f2af5d85-6e31-4eec-805f-183c11e0b935",
+            "source": {
+              "x": 980,
+              "y": 210
+            },
+            "target": {
+              "cell": "1ac8f0be-98bd-4f03-8600-24a3b538b86f",
+              "port": "6156fd01-3d11-4ed6-a08d-184c5274cfe3"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin action",
+              "description": "The admin user submits privileged administrative actions, such as suspending or reactivating users, elevating a user to admin, viewing users, managing tickets, and approving or denying refund requests. This flow crosses the User/Admin Authorization Boundary and must require strong server-side role enforcement.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "dd0e2d78-f604-4f15-a52a-c8f9f172e1c4"
+              ]
+            },
+            "labels": [
+              "Admin action"
+            ],
+            "id": "296730f4-3093-4e47-9376-a5a98725178d",
+            "source": {
+              "x": 153,
+              "y": 524
+            },
+            "target": {
+              "cell": "a7ef0768-01af-458c-bdde-ad8dd26a9278",
+              "port": "ef91f79f-ba80-469a-abbf-0d70d8a832b7"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "User/tickets updates",
+              "description": "The admin management process writes privileged changes to the database, including user status updates, role changes, ticket updates, refund approval or denial decisions, and other administrative modifications. This flow should be protected by authorization checks, CSRF protection, and audit logging.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "User/tickets updates"
+            ],
+            "id": "c3e71007-bc02-48ce-9c10-96fbe273d920",
+            "source": {
+              "x": 538,
+              "y": 505
+            },
+            "target": {
+              "cell": "f5588054-15a7-4996-a981-c580150d4964",
+              "port": "2456e704-2125-4cd2-a502-d5a98f335245"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin records",
+              "description": "The database returns administrative records such as user lists, user roles, account statuses, ticket records, order records, payment records, and refund queue items. This data should only be available to authenticated administrators.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "dd0e2d78-f604-4f15-a52a-c8f9f172e1c4"
+              ]
+            },
+            "labels": [
+              "Admin records"
+            ],
+            "id": "bdf981b6-6208-4374-929d-4686af4831b8",
+            "source": {
+              "x": 1050,
+              "y": 220
+            },
+            "target": {
+              "cell": "a7ef0768-01af-458c-bdde-ad8dd26a9278",
+              "port": "6156fd01-3d11-4ed6-a08d-184c5274cfe3"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin results",
+              "description": "The application returns admin dashboard views, user management results, ticket management results, and refund decision status messages to the admin user. The response may contain sensitive administrative information and should not be accessible to regular users.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Admin results"
+            ],
+            "id": "ca4f6265-5420-4ee1-8fe8-38da7e971716",
+            "source": {
+              "cell": "a7ef0768-01af-458c-bdde-ad8dd26a9278",
+              "port": "ef91f79f-ba80-469a-abbf-0d70d8a832b7"
+            },
+            "target": {
+              "cell": "6ef0c03a-42a7-4fda-b832-525bdea4e4f5",
+              "port": "ef73501a-2bfb-4569-b807-9b09fb012601"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin config read",
+              "description": "The admin management process may rely on sensitive configuration values such as admin seed credentials, role configuration, SECRET_KEY, or environment-based settings. Exposure of these values could allow unauthorized privilege escalation or admin account compromise.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "dd0e2d78-f604-4f15-a52a-c8f9f172e1c4"
+              ]
+            },
+            "labels": [
+              "Admin config read"
+            ],
+            "id": "1ad7387c-0d27-41ae-a0e6-2818bf241fdf",
+            "source": {
+              "cell": "a7ef0768-01af-458c-bdde-ad8dd26a9278",
+              "port": "6156fd01-3d11-4ed6-a08d-184c5274cfe3"
+            },
+            "target": {
+              "cell": "b5b97888-f560-4210-90e5-9a7b6b2f71f2",
+              "port": "afe99371-e33d-4294-8a93-43e9444badf0"
             }
           },
           {
@@ -2168,6 +2295,150 @@
               "storesInventory": false,
               "threats": []
             }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 15,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Game browsing",
+              "description": "An authenticated user requests available hockey games, sections, pricing, and seating information. This flow should only expose information appropriate for regular users and should not reveal internal database details, hidden admin information, or sensitive system state.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Game browsing"
+            ],
+            "id": "9d814e3e-1cf1-418a-a4e0-eceac1b952d3",
+            "source": {
+              "cell": "e336f853-74aa-4ec1-98f8-7c4d955f2469",
+              "port": "73f8bad7-179f-45ad-bcfb-79a467fe5dcc"
+            },
+            "target": {
+              "cell": "3a69a606-ab6f-493d-b6b2-0b703ecd4f78",
+              "port": "ef91f79f-ba80-469a-abbf-0d70d8a832b7"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 16,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Game list",
+              "description": "The application returns game listings, section options, seat availability, and pricing information to the authenticated user. The response should be properly encoded and should not expose unnecessary internal database fields or debugging information.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Game list"
+            ],
+            "id": "f1c70058-9924-497a-b3f2-8ad89c7350fb",
+            "source": {
+              "x": 500,
+              "y": 250
+            },
+            "target": {
+              "cell": "e336f853-74aa-4ec1-98f8-7c4d955f2469",
+              "port": "ef73501a-2bfb-4569-b807-9b09fb012601"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 17,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Refund status",
+              "description": "The application returns refund request status to the registered user, such as pending, approved, denied, or already requested. The response should only reveal refund information for tickets owned by the authenticated user.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Refund status"
+            ],
+            "id": "52918550-a2a7-49e4-8e61-d3f61d49b2c8",
+            "source": {
+              "x": 511,
+              "y": 430
+            },
+            "target": {
+              "cell": "e336f853-74aa-4ec1-98f8-7c4d955f2469",
+              "port": "c1e93375-24e0-47cf-a15b-7524ab2607f6"
+            },
+            "vertices": [
+              {
+                "x": 190,
+                "y": 330
+              }
+            ]
           }
         ]
       }
