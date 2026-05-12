@@ -999,13 +999,6 @@
                 "denialOfService": 1,
                 "elevationOfPrivilege": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -2178,11 +2171,13 @@
                 "text": "Application Secrets/\nEnvironment Variables"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -2279,13 +2274,33 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "0c6b974f-fdae-4db0-9119-efff702736d6",
+                  "title": "Admin Credential Exposure",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Elevation of privilege",
+                  "description": "If admin seed credentials, SECRET_KEY values, or other sensitive configuration values are exposed through environment misconfiguration, logs, repository files, or error messages, an attacker could gain privileged access or forge sessions.",
+                  "mitigation": "Use a secrets manager or protected deployment configuration. Never commit secrets to source control. Rotate exposed credentials, require admin password reset on first login, restrict access to environment files, and avoid logging sensitive values.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": "Elevation of Privilege — King of EoP"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -2437,6 +2452,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 11
+    "threatTop": 12
   }
 }
